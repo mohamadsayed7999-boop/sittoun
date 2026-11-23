@@ -39,6 +39,6 @@ function analyze(text,mode,seconds){
   }
   chosen.sort((a,b)=>a.i-b.i);if(chosen.length){result.push({section:section+1,total:groups,text:chosen.map(i=>i.s).join('\n\n')});used+=local;}
  });
- return {segments:result,totalWords:total,summaryWords:used,sentences:items.length,rejected,mode,coverage:groups};
+ return {segments:result,totalWords:total,summaryWords:result.reduce((n,s)=>n+(s.text.match(/\S+/g)||[]).length,0),sentences:items.length,rejected,mode,coverage:groups};
 }
 self.onmessage=e=>{try{self.postMessage(analyze(e.data.text,e.data.mode,e.data.seconds));}catch(err){self.postMessage({error:'تعذر تحليل النص في ذاكرة هذا الجهاز. لم ننتج ملخصا ناقصا. أغلق التطبيقات الثقيلة أو جرّب جهازا بذاكرة أكبر.'});}};
