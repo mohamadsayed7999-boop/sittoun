@@ -15,6 +15,7 @@
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%8F%B1%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="css/style.css?v=12">
+<link rel="stylesheet" href="css/planner.css?v=1">
 </head>
 <body>
 <header class="top">
@@ -78,7 +79,7 @@
 
 <section id="book-links" class="study-section"><div class="section-head"><h2>خذ الخطوة التالية: الكتب الأصلية</h2><span>مصادر المؤلفين والناشرين للقراءة أو الشراء</span></div><div class="source-grid"><a class="source-card" href="https://www.jarir.com/arabic-books-535477.html" target="_blank" rel="noopener noreferrer"><strong>العادات الذرية</strong><span>النسخة العربية · شراء ↗</span></a><a class="source-card" href="https://www.jarir.com/jarir-publication-282206875.html" target="_blank" rel="noopener noreferrer"><strong>العمل العميق</strong><span>النسخة العربية · شراء ↗</span></a><a class="source-card" href="https://www.jarir.com/arabic-books-564045.html" target="_blank" rel="noopener noreferrer"><strong>سيكولوجية المال</strong><span>النسخة العربية · شراء ↗</span></a><a class="source-card" href="https://www.jarir.com/jarir-publication-560533.html" target="_blank" rel="noopener noreferrer"><strong>العادات السبع للناس الأكثر فعالية</strong><span>النسخة العربية · شراء ↗</span></a><a class="source-card" href="https://www.jarir.com/arabic-books-632279.html" target="_blank" rel="noopener noreferrer"><strong>العقلية</strong><span>النسخة العربية · شراء ↗</span></a><a class="source-card" href="https://elibrahimi.com/product/5891" target="_blank" rel="noopener noreferrer"><strong>اصنع وقتاً أكثر من المتاح</strong><span>النسخة العربية · شراء ↗</span></a><a class="source-card" href="https://mabooko.com/product/al-jawhariya-maroc-arabic/" target="_blank" rel="noopener noreferrer"><strong>الجوهرية</strong><span>النسخة العربية · شراء ↗</span></a><a class="source-card" href="https://www.neelwafurat.com/itempage.aspx?id=lbb414435-414034&search=books" target="_blank" rel="noopener noreferrer"><strong>كيف تكسب الأصدقاء وتؤثر في الناس</strong><span>النسخة العربية · شراء ↗</span></a><a class="source-card" href="https://downloads.hindawi.org/books/94625818.pdf" target="_blank" rel="noopener noreferrer"><strong>أسس التفكير العلمي</strong><span>تحميل PDF عربي مجاني ↧</span></a><a class="source-card" href="https://downloads.hindawi.org/books/14252850.pdf" target="_blank" rel="noopener noreferrer"><strong>بين بين</strong><span>تحميل PDF عربي مجاني ↧</span></a></div><p class="meta">كتب هنداوي متاحة مجاناً بترخيص الناشر. الكتب التجارية تقودك إلى صفحة شراء النسخة العربية. لا نستضيف نسخ الكتب ولا نعد باستعارة غير متاحة.</p></section>
   <section id="study" class="study-section">
-    <div class="section-head"><h2>من الفكرة إلى الفعل</h2><span>ركن بسيط للقراءة والتركيز</span></div>
+    <div class="section-head"><h2>مساحتك للمذاكرة</h2><span>مؤقّت للتركيز، مهام واضحة، وخطة للأسبوع</span></div>
     <div class="study-grid">
       <div class="study-panel">
         <span class="eyebrow">وقت لك، بعيداً عن المشتتات</span><h3>جلسة تركيز</h3>
@@ -96,6 +97,14 @@
         <p id="task-note" class="study-hint">مهامك محفوظة على هذا المتصفح فقط، وليست متزامنة بين الأجهزة. لا تضف معلومات حساسة.</p>
       </div>
     </div>
+<section id="study-planner" class="planner" aria-labelledby="planner-title">
+<div class="planner-top"><div><span class="eyebrow">خطتك للأسبوع، في مكان واحد</span><h3 id="planner-title">جدول مذاكرتك</h3><p>حدّد وقتك، اختر مادتك، وابدأ بهدوء.</p></div><button id="planner-add" class="btn" type="button">+ أضف جلسة</button></div>
+<div class="planner-toolbar"><div class="planner-views" role="group" aria-label="عرض الجدول"><button id="planner-day-view" type="button" aria-pressed="true">يوم واحد</button><button id="planner-week-view" type="button" aria-pressed="false">الأسبوع كله</button></div><p id="planner-summary" class="meta"></p></div>
+<div id="planner-day-tabs" class="day-tabs" role="group" aria-label="اختر يوم المذاكرة"></div>
+<form id="planner-form" class="planner-form" hidden><h4 id="planner-form-title">خطّط لجلسة جديدة</h4><div class="planner-form-grid"><label class="planner-subject-field" for="planner-subject">المادة أو الهدف<input id="planner-subject" required maxlength="80" placeholder="مثلاً: مراجعة قوانين الفيزياء" autocomplete="off"></label><label for="planner-day">اليوم<select id="planner-day"></select></label><label for="planner-start">من الساعة<input id="planner-start" type="time" required></label><label for="planner-end">إلى الساعة<input id="planner-end" type="time" required></label></div><label class="notes-label" for="planner-notes">ملاحظات الجلسة <span class="meta">(اختياري)</span><textarea id="planner-notes" maxlength="180" placeholder="الفصل الثالث + حل ١٠ مسائل"></textarea></label><div class="row"><button id="planner-save" class="btn" type="submit">أضف إلى جدولي</button><button id="planner-cancel" class="btn alt" type="button">إلغاء</button></div></form>
+<p id="planner-status" class="planner-status" role="status" aria-live="polite"></p><div id="planner-list"></div>
+<p class="planner-foot">جدول أسبوعي متكرر، محفوظ على هذا المتصفح فقط. لا توجد مزامنة أو تنبيهات خارج الصفحة. أضف استراحات بين الجلسات، ولا تضع معلومات حساسة.</p>
+</section>
   </section>
 
   <section id="videos">
@@ -122,6 +131,6 @@
   </div>
 </footer>
 <script src="js/app.js" defer></script>
-<script src="js/study.js" defer></script><script src="js/library-search.js" defer></script>
+<script src="js/planner.js?v=1" defer></script><script src="js/study.js" defer></script><script src="js/library-search.js" defer></script>
 </body>
 </html>
