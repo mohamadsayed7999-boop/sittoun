@@ -43,7 +43,7 @@
         <p class="meta">يفحص النص المضمن في PDF، ويقرأ الصفحات المصورة أو المتضررة ضوئيا تلقائيا. إذا ظل النص مشوها، اختر القراءة الضوئية لكل الصفحات. يُقرأ الكتاب كله افتراضيا، صفحة بعد صفحة دون حد ١٠٠ ألف حرف. يمكنك تحديد نطاق اختياري. الملفات الضخمة قد تتجاوز ذاكرة بعض الهواتف؛ لن نقص النص ونصفه بأنه كامل.</p>
         <div id="file-ready" hidden><p id="file-name"></p><button id="extract-file" class="btn" type="button">استخرج النص</button><button id="cancel-extract" class="btn alt" type="button" hidden>إلغاء</button></div>
         <div id="upload-status" class="upload-status" role="status" aria-live="polite">ملفك يبقى على جهازك. اختر ملفاً للبدء.</div><progress id="upload-progress" max="100" value="0" hidden aria-label="تقدم استخراج النص"></progress>
-        <p class="privacy-note">الاستخراج والتلخيص داخل متصفحك. لا نرفع ملفك أو صورك أو نصك. عند استخدام PDF أو الصور يُنزَّل محرك القراءة وملفات اللغة من CDN، وهذا يحتاج اتصالاً بالإنترنت. راجع النص المستخرج، فقد تخطئ قراءة الصور أو ترتيب أعمدة PDF.</p>
+        <p class="privacy-note">الاستخراج والتلخيص داخل متصفحك. لا نرفع ملفك أو صورك أو نصك. عند استخدام PDF أو الصور يُنزَّل محرك القراءة وملفات اللغة من CDN، وهذا يحتاج اتصالاً بالإنترنت. الصفحات ذات النص السليم تتجاوز OCR تلقائيا. يستخدم OCR صورة محدودة الدقة لتقليل استهلاك الذاكرة؛ قد تستغرق الكتب المصورة دقائق طويلة أو أكثر حسب الهاتف. راجع النص المستخرج، فقد تخطئ قراءة الصور أو ترتيب أعمدة PDF.</p>
       </section>
       <label for="src">الصق النص هنا أو راجع النص المستخرج</label>
 
@@ -90,6 +90,6 @@
 </footer>
 <script src="js/app.js" defer></script>
 <script src="js/book-summary.js?v=1" defer></script>
-<script src="js/book-upload.js?v=1" defer></script>
+<script src="js/book-upload.js?v=2" defer></script>
 </body>
 </html>
