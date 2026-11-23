@@ -30,24 +30,37 @@
     return (s.match(/\S+/g) || []).map(norm).filter(function (w) { return w.length > 2 && !STOP.has(w); });
   }
 
-  // تقسيم إلى جمل (بدون lookbehind لدعم متصفحات أقدم)
+  // Keep source sentences intact. PDF line wrapping is not a sentence boundary.
+  function cleanText(text) {
+    return text.normalize('NFC').replace(/[\u200B-\u200F\u202A-\u202E\u2066-\u2069\uFEFF]/g, '')
+      .replace(/\r/g, '').replace(/[ \t]+/g, ' ')
+      .replace(/ +([،؛؟!:.])/g, '$1').replace(/([،؛؟!])(?=[\p{L}])/gu, '$1 ')
+      .replace(/\.{3,}/g, '…').replace(/[!?؟]{2,}/g, '؟').trim();
+  }
+  function usable(sentence) {
+    var words = sentence.match(/[\p{L}\p{N}]+/gu) || [];
+    var letters = sentence.match(/\p{L}/gu) || [];
+    if (words.length < 5 || words.length > 140 || letters.length < sentence.replace(/\s/g,'').length * 0.55) return false;
+    if (/�|[|_]{2,}|(.)\1{5,}/u.test(sentence)) return false;
+    var short = words.filter(function(w){return w.length === 1;}).length;
+    if (short > words.length * 0.35) return false;
+    return true;
+  }
   function splitSentences(text) {
-    var out = [];
-    text.replace(/\r/g, '').split(/\n+/).forEach(function (line) {
-      var parts = line.replace(/[ \t]+/g, ' ').match(/[^.!؟?۔…]+[.!؟?۔…]*/g) || [];
-      parts.forEach(function (p) {
-        p = p.trim();
-        if (wc(p) >= 4) out.push(p);
+    var out = [], seen = new Set();
+    var blocks = cleanText(text).split(/\n\s*\n/);
+    blocks.forEach(function(block){
+      block = block.split('\n').filter(function(line){return !/^\s*[\d٠-٩]+\s*$/.test(line);}).join(' ');
+      var parts = block.match(/[^.!؟?۔…؛]+(?:[.!؟?۔…؛]+|$)/g) || [];
+      parts.forEach(function(part){
+        part = part.trim();
+        if (!usable(part)) return;
+        var k = norm(part), set = new Set(keywords(part));
+        if (seen.has(k) || out.some(function(s){return jaccard(set,new Set(keywords(s))) > 0.82;})) return;
+        seen.add(k);out.push(part);
       });
     });
-    // إزالة الجمل المتطابقة تماماً
-    var seen = new Set();
-    return out.filter(function (s) {
-      var k = s.replace(/\s+/g, ' ');
-      if (seen.has(k)) return false;
-      seen.add(k);
-      return true;
-    });
+    return out;
   }
 
   function jaccard(a, b) {
@@ -60,10 +73,8 @@
   function summarize(text, target) {
     var sents = splitSentences(text);
     var total = wc(text);
-    if (total <= target) return text.trim();
-    if (sents.length < 3) {
-      return (text.trim().match(/\S+/g) || []).slice(0, target).join(' ') + '…';
-    }
+    if (!sents.length) return '';
+    if (sents.reduce(function(n,s){return n+wc(s);},0) <= target) return sents.join('\n\n');
 
     var N = sents.length;
     var tf = new Map(), df = new Map();
@@ -97,7 +108,7 @@
     var chosen = [], used = 0;
 
     // مرحلتان: صارمة ضد التشابه ثم أخف إن لم نبلغ الطول المطلوب
-    [0.5, 0.75].forEach(function (simMax) {
+    [0.5, 0.65].forEach(function (simMax) {
 while (pool.length && used < target) {
         var best = -1, bestVal = -Infinity;
         for (var k = 0; k < pool.length; k++) {
@@ -146,6 +157,10 @@ while (pool.length && used < target) {
     var target = Math.round((Number(secs.value) / 60) * WPM);
     var res = summarize(text, target);
     var a = wc(text), b = wc(res);
+    if (!res) {
+      out.textContent = 'لم أجد جملاً واضحة كافية لتكوين خلاصة موثوقة. راجع النص المستخرج أو استخدم صورة أوضح، ثم حاول مجدداً.';
+      stats.textContent = '';actions.hidden = true;return;
+    }
     out.textContent = res;
     var savedMin = Math.max(0, Math.round((a - b) / WPM));
     stats.textContent = 'الأصل: ' + fmt(a) + ' كلمة (' + fmtTime(a) + ') ← الخلاصة: ' +
