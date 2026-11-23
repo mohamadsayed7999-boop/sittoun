@@ -8,7 +8,7 @@
   });
 
   document.addEventListener('click', async function (e) {
-    // نسخ الرابط (إن كانت data-copy فارغة نستخدم رابط الصفحة)
+    // نسخ الرابط
     var copy = e.target.closest('[data-copy]');
     if (copy) {
       try {
