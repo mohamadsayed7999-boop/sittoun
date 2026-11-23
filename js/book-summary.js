@@ -2,7 +2,7 @@
 'use strict';
 const $=id=>document.getElementById(id),input=$('src'),out=$('out'),stats=$('stats'),actions=$('actions'),run=$('run'),stop=$('cancel-summary');
 let worker=null,job=0;const wc=s=>(s.match(/\S+/g)||[]).length,fmt=n=>Number(n).toLocaleString('ar-EG');
-function lock(on){['src','summary-mode','extract-file','source-file','pdf-start','pdf-end','ocr-language','clear'].forEach(id=>$(id).disabled=on);$('secs').disabled=on||$('summary-mode').value==='book';}
+function lock(on){['src','summary-mode','extract-file','source-file','pdf-start','pdf-end','ocr-language','pdf-ocr','clear'].forEach(id=>$(id).disabled=on);$('secs').disabled=on||$('summary-mode').value==='book';}
 function idle(){run.disabled=false;stop.hidden=true;lock(false);}
 function cancel(){job++;if(worker)worker.terminate();worker=null;idle();stats.textContent='تم إلغاء التلخيص. النص الأصلي لم يتغير.';}
 input.addEventListener('input',e=>{if(e.isTrusted)delete input.dataset.pages;$('count').textContent=fmt(wc(input.value))+' كلمة · '+fmt(input.value.length)+' حرف · تتم معالجة النص كله دون قص صامت.';});
