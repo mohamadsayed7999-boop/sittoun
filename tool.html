@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>أداة التلخيص الفوري | ستّون</title>
+<meta name="description" content="الصق أي نص عربي واحصل على خلاصة في 30 أو 60 أو 90 ثانية، مجاناً وبخصوصية كاملة داخل متصفحك.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://i.ytimg.com; frame-src https://www.youtube-nocookie.com; style-src 'self'; script-src 'self'; form-action 'self' https://formspree.io; base-uri 'self'">
+<meta name="theme-color" content="#c2410c">
+<meta property="og:title" content="أداة التلخيص الفوري | ستّون">
+<meta property="og:description" content="الصق أي نص واحصل على خلاصته في 60 ثانية، مجاناً وبخصوصية كاملة.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ستّون">
+<meta property="og:locale" content="ar_AR">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%8F%B1%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap bar">
+    <a class="logo" href="index.html">⏱ ستّون</a>
+    <nav aria-label="القائمة الرئيسية">
+      <a href="tool.html">الأداة</a>
+      <a href="index.html#summaries">الخلاصات</a>
+      <a href="index.html#videos">فيديو</a>
+      <a href="about.html">من نحن</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="prose wide">
+    <h1>لخّص أي نص في ٦٠ ثانية</h1>
+    <p class="meta">يعمل داخل متصفحك فقط، ولا يُرسل نصّك لأي جهة.</p>
+
+    <div class="tool">
+      <label for="src">الصق النص هنا</label>
+      <textarea id="src" maxlength="20000" placeholder="مقال، فصل من كتاب، تقرير…"></textarea>
+      <div id="count" class="stats" aria-live="polite"></div>
+
+      <div class="row">
+        <label for="secs">مدة القراءة:</label>
+        <select id="secs" class="auto">
+          <option value="30">٣٠ ثانية</option>
+          <option value="60" selected>٦٠ ثانية</option>
+          <option value="90">٩٠ ثانية</option>
+        </select>
+        <button id="run" class="btn" type="button">لخّص</button>
+        <button id="clear" class="btn alt" type="button">مسح</button>
+      </div>
+
+      <div id="stats" class="stats" aria-live="polite"></div>
+      <div id="out" class="out" aria-live="polite">ستظهر الخلاصة هنا.</div>
+      <div id="actions" class="row" hidden>
+        <button id="copy" class="btn alt" type="button">نسخ</button>
+        <button id="share" class="btn alt" type="button">مشاركة</button>
+      </div>
+    </div>
+  </section>
+
+  <aside class="ad-slot" data-slot="tool-bottom" aria-label="مساحة إعلانية"><span>إعلان</span></aside>
+
+  <section class="premium">
+    <h3>⭐ ستّون بلس</h3>
+    <p>تلخيص أعمق للنصوص الطويلة وحفظ خلاصاتك في مكتبتك الشخصية.</p>
+    <a class="btn alt" href="contact.html">انضم لقائمة الانتظار</a>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>ستّون — خلاصة كل كتاب في ستين ثانية</p>
+    <p><a href="about.html">من نحن</a> · <a href="privacy.html">الخصوصية</a> · <a href="terms.html">الشروط</a> · <a href="contact.html">تواصل</a></p>
+  </div>
+</footer>
+<script src="js/app.js" defer></script>
+<script src="js/summarizer.js" defer></script>
+</body>
+</html>

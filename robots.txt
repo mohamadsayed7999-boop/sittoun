@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mohamadsayed7999-boop.github.io/sittoun/sitemap.xml
