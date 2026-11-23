@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>أداة التلخيص الفوري | ستّون</title>
 <meta name="description" content="الصق أي نص عربي واحصل على خلاصة في 30 أو 60 أو 90 ثانية، مجاناً وبخصوصية كاملة داخل متصفحك.">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://i.ytimg.com; frame-src https://www.youtube-nocookie.com; style-src 'self'; script-src 'self'; form-action 'self' https://formspree.io; base-uri 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob: https://i.ytimg.com; frame-src https://www.youtube-nocookie.com; style-src 'self'; script-src 'self' 'wasm-unsafe-eval' https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://cdn.jsdelivr.net https://tessdata.projectnaptha.com;  form-action 'self' https://formspree.io; base-uri 'self'">
 <meta name="theme-color" content="#c2410c">
 <meta property="og:title" content="أداة التلخيص الفوري | ستّون">
 <meta property="og:description" content="الصق أي نص واحصل على خلاصته في 60 ثانية، مجاناً وبخصوصية كاملة.">
@@ -14,7 +14,8 @@
 <meta property="og:locale" content="ar_AR">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%8F%B1%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=11">
+<link rel="stylesheet" href="css/upload.css?v=1">
 </head>
 <body>
 <header class="top">
@@ -35,8 +36,18 @@
     <p class="meta">يعمل داخل متصفحك فقط، ولا يُرسل نصّك لأي جهة.</p>
 
     <div class="tool">
-      <label for="src">الصق النص هنا</label>
-      <textarea id="src" maxlength="20000" placeholder="مقال، فصل من كتاب، تقرير…"></textarea>
+      <section class="upload-panel" aria-labelledby="upload-title">
+        <span class="eyebrow">من الملف إلى الفكرة</span><h2 id="upload-title">أضف كتاباً أو صورة</h2>
+        <div id="drop-zone" class="drop-zone"><span class="upload-icon" aria-hidden="true">↥</span><p><strong>اسحب ملفك إلى هنا</strong></p><p class="meta">أو اختره من جهازك. PDF، TXT، أو صورة JPG / PNG / WEBP.</p><label class="btn" for="source-file">اختر ملفاً</label><input id="source-file" type="file" accept=".pdf,.txt,image/png,image/jpeg,image/webp" aria-label="اختر ملف كتاب أو صورة"><p class="meta">ملف واحد · حتى ٢٠ ميجابايت</p></div>
+        <div class="upload-options"><label for="ocr-language">لغة الصورة</label><select id="ocr-language" class="auto"><option value="ara" selected>العربية</option><option value="ara+eng">العربية والإنجليزية</option><option value="eng">الإنجليزية</option></select><label for="pdf-start">PDF من صفحة</label><input id="pdf-start" type="number" min="1" value="1"><label for="pdf-end">إلى صفحة</label><input id="pdf-end" type="number" min="1" placeholder="النهاية"></div>
+        <p class="meta">يستخرج النص القابل للتحديد من PDF. للصفحات الممسوحة ضوئياً استخدم صورة الصفحة. الحد ١٠٠ ألف حرف؛ قسّم الكتب الكبيرة إلى نطاقات صفحات.</p>
+        <div id="file-ready" hidden><p id="file-name"></p><button id="extract-file" class="btn" type="button">استخرج النص</button><button id="cancel-extract" class="btn alt" type="button" hidden>إلغاء</button></div>
+        <div id="upload-status" class="upload-status" role="status" aria-live="polite">ملفك يبقى على جهازك. اختر ملفاً للبدء.</div><progress id="upload-progress" max="100" value="0" hidden aria-label="تقدم استخراج النص"></progress>
+        <p class="privacy-note">الاستخراج والتلخيص داخل متصفحك. لا نرفع ملفك أو صورك أو نصك. عند استخدام PDF أو الصور يُنزَّل محرك القراءة وملفات اللغة من CDN، وهذا يحتاج اتصالاً بالإنترنت. راجع النص المستخرج، فقد تخطئ قراءة الصور أو ترتيب أعمدة PDF.</p>
+      </section>
+      <label for="src">الصق النص هنا أو راجع النص المستخرج</label>
+
+      <textarea id="src" maxlength="100000" placeholder="مقال، فصل من كتاب، تقرير…"></textarea>
       <div id="count" class="stats" aria-live="polite"></div>
 
       <div class="row">
@@ -75,6 +86,7 @@
   </div>
 </footer>
 <script src="js/app.js" defer></script>
-<script src="js/summarizer.js" defer></script>
+<script src="js/summarizer.js?v=2" defer></script>
+<script src="js/upload.js?v=1" defer></script>
 </body>
 </html>
