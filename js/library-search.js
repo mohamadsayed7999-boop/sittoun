@@ -4,7 +4,7 @@ const input=document.getElementById('library-search'),count=document.getElementB
 const wrap=document.createElement('section');wrap.id='global-results';wrap.className='global-results';wrap.hidden=true;wrap.setAttribute('aria-label','نتائج البحث في الموقع');count.after(wrap);
 const normalize=s=>s.toLowerCase().normalize('NFKD').replace(/[\u064B-\u065F\u0670\u0640]/g,'').replace(/[إأآٱ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه').replace(/[^\p{L}\p{N}\s]/gu,' ').replace(/\s+/g,' ').trim();
 const index=[];
-document.querySelectorAll('#summaries .card, #adham-books .card, #money-books .card').forEach(c=>index.push({type:'كتب وخلاصات',title:c.querySelector('h3').textContent,detail:c.querySelector('p').textContent+' · '+c.querySelector('small').textContent,url:c.getAttribute('href'),tags:c.textContent}));
+document.querySelectorAll('#summaries .card, #adham-books .card, #money-books .card, #fiction-books .card').forEach(c=>index.push({type:'كتب وخلاصات',title:c.querySelector('h3').textContent,detail:c.querySelector('p').textContent+' · '+c.querySelector('small').textContent,url:c.getAttribute('href'),tags:c.textContent}));
 document.querySelectorAll('.video-item').forEach(c=>{const a=c.querySelector('.video-external');if(a)index.push({type:'فيديوهات عربية',title:c.querySelector('b').textContent,detail:c.querySelector('p').textContent,url:a.href,tags:'فيديو فيديوهات يوتيوب ملخص شرح '+c.textContent});});
 [
  ['أدوات ومساحات','أداة التلخيص','لخّص نصاً أو ملف PDF أو صورة، داخل المتصفح.','tool.html','تلخيص ملخص ملفات صور OCR نص كتاب'],
