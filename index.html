@@ -23,7 +23,7 @@
     <nav aria-label="القائمة الرئيسية">
       <a href="tool.html">الأداة</a>
       <a href="index.html#summaries">الخلاصات</a>
-      <a href="index.html#videos">فيديو</a>
+      <a href="#study">ركن التركيز</a>
       <a href="about.html">من نحن</a>
     </nav>
   </div>
@@ -71,6 +71,27 @@
     </div>
   </section>
 
+  <section id="study" class="study-section">
+    <div class="section-head"><h2>من الفكرة إلى الفعل</h2><span>ركن بسيط للقراءة والتركيز</span></div>
+    <div class="study-grid">
+      <div class="study-panel">
+        <span class="eyebrow">وقت لك، بعيداً عن المشتتات</span><h3>جلسة تركيز</h3>
+        <div id="focus-time" class="focus-time" role="timer" aria-label="الوقت المتبقي">25:00</div>
+        <label for="focus-duration">مدة الجلسة</label>
+        <select id="focus-duration" class="auto"><option value="1">دقيقة للتجربة</option><option value="15">١٥ دقيقة</option><option value="25" selected>٢٥ دقيقة</option><option value="45">٤٥ دقيقة</option></select>
+        <div class="row"><button id="focus-toggle" class="btn" type="button">ابدأ التركيز</button><button id="focus-reset" class="btn alt" type="button">إعادة ضبط</button></div>
+        <p id="focus-status" class="meta" aria-live="polite">اختر مهمة واحدة، واترك الباقي لوقت آخر.</p>
+        <p class="study-hint">اترك الصفحة مفتوحة. قد يتأخر التحديث إذا أوقف الهاتف المتصفح في الخلفية.</p>
+      </div>
+      <div class="study-panel">
+        <span class="eyebrow">خطوة صغيرة اليوم</span><h3>قائمة إنجازك</h3>
+        <form id="task-form" class="task-form"><label class="sr-only" for="task-input">مهمة جديدة</label><input id="task-input" maxlength="120" placeholder="مثلاً: أقرأ خلاصة وأطبّق فكرة منها" required autocomplete="off"><button class="btn" type="submit">أضف</button></form>
+        <p id="task-progress" class="meta" aria-live="polite"></p><ul id="task-list" class="task-list"></ul>
+        <p id="task-note" class="study-hint">مهامك محفوظة على هذا المتصفح فقط، وليست متزامنة بين الأجهزة. لا تضف معلومات حساسة.</p>
+      </div>
+    </div>
+  </section>
+
   <section id="videos">
     <div class="section-head"><h2>فكرة بالصوت والصورة</h2><span>فيديوهات قصيرة، نجهّزها لك قريباً</span></div>
     <div class="vids">
@@ -104,5 +125,6 @@
   </div>
 </footer>
 <script src="js/app.js" defer></script>
+<script src="js/study.js" defer></script>
 </body>
 </html>
