@@ -14,7 +14,7 @@
 <meta property="og:locale" content="ar_AR">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%8F%B1%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=2">
 </head>
 <body>
 <header class="top">
@@ -31,40 +31,48 @@
 
 <main class="wrap">
   <section class="hero">
+    <div class="hero-copy">
+    <span class="eyebrow">فكرة تستحق وقتك</span>
     <span class="tag">⏱ ستين ثانية فقط</span>
-    <h1>اقرأ الفكرة، لا الصفحات.</h1>
+    <h1>اقرأ الفكرة،<br><span>لا الصفحات.</span></h1>
     <p>خلاصات مركّزة لأهم الكتب، وأداة تلخّص أي نص تلصقه خلال ثوانٍ، وفيديوهات قصيرة تعطيك فكرة اليوم.</p>
-    <p><a class="btn" href="tool.html">جرّب أداة التلخيص</a> <a class="btn alt" href="#summaries">تصفّح الخلاصات</a></p>
+    <p class="hero-actions"><a class="btn" href="tool.html">جرّب أداة التلخيص</a> <a class="btn alt" href="#summaries">تصفّح الخلاصات</a></p>
+    <p class="hero-note">قراءة سريعة · فكرة واضحة · خطوة عملية</p>
+    </div>
+    <div class="hero-art" aria-hidden="true"><div class="art-book"><span>مساحة لفكرة جديدة</span><b>ستّون</b><i>✦</i><span>كل يوم، معرفة أكثر</span></div><div class="art-stamp"><b>٦٠ ثانية</b>قد تبدأ بها عادة جديدة</div></div>
   </section>
 
   <aside class="ad-slot" data-slot="home-top" aria-label="مساحة إعلانية"><span>إعلان</span></aside>
 
   <section id="summaries">
-    <h2>أحدث الخلاصات</h2>
+    <div class="section-head"><h2>على رفّ ستّون</h2><span>ثلاثة كتب. أفكار تبقى معك.</span></div>
     <div class="grid">
       <a class="card" href="summaries/atomic-habits.html">
+        <div class="book-art habits" aria-hidden="true"><b>✦</b></div>
         <span class="tag">تطوير الذات</span>
         <h3>العادات الذرية</h3>
         <p>التغيير الكبير ينتج عن تحسينات صغيرة متكررة.</p>
-        <small>⏱ ٦٠ ثانية · جيمس كلير</small>
+        <small>⏱ ٦٠ ثانية · جيمس كلير</small><span class="card-link">اقرأ الخلاصة ←</span>
       </a>
       <a class="card" href="summaries/deep-work.html">
+        <div class="book-art focus" aria-hidden="true"><b>◎</b></div>
         <span class="tag">إنتاجية</span>
         <h3>العمل العميق</h3>
         <p>القدرة على التركيز مهارة نادرة ومربحة.</p>
-        <small>⏱ ٦٠ ثانية · كال نيوبورت</small>
+        <small>⏱ ٦٠ ثانية · كال نيوبورت</small><span class="card-link">اقرأ الخلاصة ←</span>
       </a>
       <a class="card" href="summaries/the-psychology-of-money.html">
+        <div class="book-art money" aria-hidden="true"><b>↗</b></div>
         <span class="tag">مال وأعمال</span>
         <h3>سيكولوجية المال</h3>
         <p>النجاح المالي سلوك أكثر منه معرفة تقنية.</p>
-        <small>⏱ ٦٠ ثانية · مورغان هاوسل</small>
+        <small>⏱ ٦٠ ثانية · مورغان هاوسل</small><span class="card-link">اقرأ الخلاصة ←</span>
       </a>
     </div>
   </section>
 
   <section id="videos">
-    <h2>فيديوهات قصيرة</h2>
+    <div class="section-head"><h2>فكرة بالصوت والصورة</h2><span>فيديوهات قصيرة، نجهّزها لك قريباً</span></div>
     <div class="vids">
       <!--
         لتفعيل فيديو حقيقي: استبدل أي عنصر <div class="vid soon"> بالزر التالي
