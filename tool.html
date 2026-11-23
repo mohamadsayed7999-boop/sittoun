@@ -14,7 +14,7 @@
 <meta property="og:locale" content="ar_AR">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%8F%B1%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="css/style.css?v=15">
+<link rel="stylesheet" href="css/style.css?v=18">
 <link rel="stylesheet" href="css/upload.css?v=1">
 </head>
 <body>
@@ -38,7 +38,7 @@
     <div class="tool">
       <section class="upload-panel" aria-labelledby="upload-title">
         <span class="eyebrow">من الملف إلى الفكرة</span><h2 id="upload-title">أضف كتاباً أو صورة</h2>
-        <div id="drop-zone" class="drop-zone"><span class="upload-icon" aria-hidden="true">↥</span><p><strong>اسحب ملفك إلى هنا</strong></p><p class="meta">أو اختره من جهازك. PDF، TXT، أو صورة JPG / PNG / WEBP.</p><label class="btn" for="source-file">اختر ملفاً</label><input id="source-file" type="file" accept=".pdf,.txt,image/png,image/jpeg,image/webp" aria-label="اختر ملف كتاب أو صورة"><p class="meta">ملف واحد · حتى ١٠٠ ميجابايت</p></div>
+        <div id="drop-zone" class="drop-zone"><span class="upload-icon" aria-hidden="true">↥</span><p><strong>اسحب ملفك إلى هنا</strong></p><p class="meta">أو اختره من جهازك. PDF، TXT، أو صورة JPG / PNG / WEBP.</p><label class="btn" for="source-file">اختر ملفاً</label><input id="source-file" type="file" accept=".pdf,.txt,image/png,image/jpeg,image/webp" aria-label="اختر ملف كتاب أو صورة"><p class="meta">ملف واحد · حتى ٥٠٠ ميجابايت</p></div>
         <div class="upload-options"><label for="ocr-language">لغة الصورة</label><select id="ocr-language" class="auto"><option value="ara" selected>العربية</option><option value="ara+eng">العربية والإنجليزية</option><option value="eng">الإنجليزية</option></select><label for="pdf-start">PDF من صفحة</label><input id="pdf-start" type="number" min="1" value="1"><label for="pdf-end">إلى صفحة</label><input id="pdf-end" type="number" min="1" placeholder="النهاية"></div>
         <p class="meta">يستخرج النص القابل للتحديد من PDF. للصفحات الممسوحة ضوئياً استخدم صورة الصفحة. الحد ١٠٠ ألف حرف؛ قسّم الكتب الكبيرة إلى نطاقات صفحات قصيرة لتقليل استهلاك الذاكرة. قبول الملف لا يضمن قدرة كل هاتف على معالجته.</p>
         <div id="file-ready" hidden><p id="file-name"></p><button id="extract-file" class="btn" type="button">استخرج النص</button><button id="cancel-extract" class="btn alt" type="button" hidden>إلغاء</button></div>
@@ -87,6 +87,6 @@
 </footer>
 <script src="js/app.js" defer></script>
 <script src="js/summarizer.js?v=2" defer></script>
-<script src="js/upload.js?v=1" defer></script>
+<script src="js/upload.js?v=2" defer></script>
 </body>
 </html>
