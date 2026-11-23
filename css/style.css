@@ -13,3 +13,4 @@
 .video-item .vid,.summary-video .vid{display:block;width:100%;height:auto;aspect-ratio:16/9;min-height:180px}.summary-video .vid{min-height:240px}.video-item .vid b,.summary-video .vid b{position:absolute;bottom:0;inset-inline:0}.video-item .vid iframe,.summary-video .vid iframe{display:block;position:absolute;inset:0;width:100%;height:100%}
 
 [hidden]{display:none!important}#library-search{width:100%;max-width:540px;margin:.5rem 0;padding:1rem;border:1px solid var(--line);border-radius:12px;background:#fff}
+#summaries>label{display:block;font-weight:700;margin-top:24px}#library-search{display:block;border-color:var(--bd);font:inherit;min-height:50px}
