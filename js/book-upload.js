@@ -27,7 +27,7 @@ go.addEventListener('click',async()=>{
   loadingTask=lib.getDocument({data:new Uint8Array(await file.arrayBuffer()),isEvalSupported:false});pdf=await loadingTask.promise;check(t);
   const from=Math.max(1,Math.floor(Number($('pdf-start').value)||1)),to=Math.min(pdf.numPages,Math.floor(Number($('pdf-end').value)||pdf.numPages));if(from>to)throw new Error('نطاق الصفحات غير صحيح. عدد صفحات الملف '+pdf.numPages+'.');
   const pages=[],mode=$('pdf-ocr').value;pageInfo='الصفحات '+from+' إلى '+to+' من أصل '+pdf.numPages+'. ';let current=from;
-  const report=p=>say('قراءة ضوئية للصفحة '+current+' من '+to+' · '+p+'٪. قد تحتاج الكتب المصورة وقتا طويلا. يمكنك الإلغاء.',Math.round(3+94*(current-from+p/100)/(to-from+1)));
+  const report=p=>say('قراءة ضوئية محسنة للصفحة '+current+' من '+to+' · '+p+'٪. قد تحتاج الكتب المصورة وقتا طويلا. يمكنك الإلغاء.',Math.round(3+94*(current-from+p/100)/(to-from+1)));
   for(let n=from;n<=to;n++){
    check(t);current=n;say('فحص صفحة '+n+' من '+to+'…',Math.round(3+94*(n-from)/(to-from+1)));
    const page=await pdf.getPage(n);let canvas=null;
@@ -35,7 +35,7 @@ go.addEventListener('click',async()=>{
     if(mode==='always'||(mode==='auto'&&quality(line).needs)){
      report(0);const worker=await engine(t,report);check(t);
      // Bound canvas area and reuse a single OCR worker for the entire document.
-     const base=page.getViewport({scale:1}),scale=Math.min(2.5,Math.sqrt(2800000/(base.width*base.height))),view=page.getViewport({scale});
+     const base=page.getViewport({scale:1}),scale=Math.min(2,Math.sqrt(1800000/(base.width*base.height))),view=page.getViewport({scale});
      canvas=document.createElement('canvas');canvas.width=Math.ceil(view.width);canvas.height=Math.ceil(view.height);
      await page.render({canvasContext:canvas.getContext('2d'),viewport:view}).promise;check(t);
      const result=await worker.recognize(canvas);check(t);line=result.data.text;ocrPages++;
