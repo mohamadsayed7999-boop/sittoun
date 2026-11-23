@@ -3,7 +3,7 @@
   'use strict';
 
   var WPM = 180;          // سرعة القراءة التقريبية بالعربية (كلمة/دقيقة)
-  var MAX_CHARS = 20000;  // الحد الأقصى للنص المدخل
+  var MAX_CHARS = 100000;  // الحد الأقصى للنص المدخل
   var MIN_WORDS = 40;     // أقل عدد كلمات للتلخيص
 
   function $(id) { return document.getElementById(id); }
