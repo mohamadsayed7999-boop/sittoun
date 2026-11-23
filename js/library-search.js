@@ -2,9 +2,11 @@
 'use strict';
 const input=document.getElementById('library-search'),count=document.getElementById('search-count');if(!input)return;
 const wrap=document.createElement('section');wrap.id='global-results';wrap.className='global-results';wrap.hidden=true;wrap.setAttribute('aria-label','نتائج البحث في الموقع');count.after(wrap);
+const moreVideos=[{"type": "فيديوهات عربية", "title": "العادات السبع للناس الأكثر فعالية", "detail": "أخضر", "url": "https://www.youtube.com/watch?v=7dl7c9c0xvA", "tags": "فيديو فيديوهات ملخص العادات السبع للناس الأكثر فعالية"}, {"type": "فيديوهات عربية", "title": "العقلية", "detail": "خير جليس", "url": "https://www.youtube.com/watch?v=n7IkCq-M9y8", "tags": "فيديو فيديوهات ملخص العقلية"}, {"type": "فيديوهات عربية", "title": "اصنع وقتاً أكثر من المتاح", "detail": "ReadTube", "url": "https://www.youtube.com/watch?v=0Ro2djOERr4", "tags": "فيديو فيديوهات ملخص اصنع وقتاً أكثر من المتاح"}, {"type": "فيديوهات عربية", "title": "الجوهرية", "detail": "Book Flow", "url": "https://www.youtube.com/watch?v=wbAy5c0YgOU", "tags": "فيديو فيديوهات Book Flow"}, {"type": "فيديوهات عربية", "title": "كيف تكسب الأصدقاء وتؤثر في الناس", "detail": "دوباميكافين، الجزء الأول", "url": "https://www.youtube.com/watch?v=LKHMbh_Nfqs", "tags": "فيديو فيديوهات ملخص كيف تكسب الأصدقاء وتؤثر في الناس"}];
 const normalize=s=>s.toLowerCase().normalize('NFKD').replace(/[\u064B-\u065F\u0670\u0640]/g,'').replace(/[إأآٱ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه').replace(/[^\p{L}\p{N}\s]/gu,' ').replace(/\s+/g,' ').trim();
 const index=[];
 document.querySelectorAll('#summaries .card, #adham-books .card, #money-books .card, #fiction-books .card, #new-series .card').forEach(c=>index.push({type:'كتب وخلاصات',title:c.querySelector('h3').textContent,detail:c.querySelector('p').textContent+' · '+c.querySelector('small').textContent,url:c.getAttribute('href'),tags:c.textContent}));
+index.push(...moreVideos);
 document.querySelectorAll('.video-item').forEach(c=>{const a=c.querySelector('.video-external');if(a)index.push({type:'فيديوهات عربية',title:c.querySelector('b').textContent,detail:c.querySelector('p').textContent,url:a.href,tags:'فيديو فيديوهات يوتيوب ملخص شرح '+c.textContent});});
 [
  ['أدوات ومساحات','أداة التلخيص','لخّص نصاً أو ملف PDF أو صورة، داخل المتصفح.','tool.html','تلخيص ملخص ملفات صور OCR نص كتاب'],
