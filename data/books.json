@@ -2846,6 +2846,75 @@
       "affiliate_disclosure": false,
       "verified_at": "2026-11-24",
       "routing_status": "active"
+    },
+    {
+      "id": "mystery-life",
+      "title": "لغز الحياة",
+      "author": "مصطفى محمود",
+      "category": "فلسفة وفكر",
+      "description": "تثبت صفحة مكتبات الشروق عنوان لغز الحياة ونسبته إلى مصطفى محمود وغلاف الطبعة المعروضة. لم يتوفر لنا نص كامل من مصدر مرخص لهذه الصفحة. أما وصف موضوعاته فاستندنا فيه إلى المادة التعريفية المستقلة في islam.museum ",
+      "cover_image": "https://www.shoroukbookstores.com/images/Books/original/9789778712421.jpg",
+      "monetization_type": "direct_store",
+      "source_name": "مكتبات الشروق",
+      "destination_url": "https://www.shoroukbookstores.com/books/view.aspx?id=b95ddca7-3291-4a70-835d-a7df19f6f254",
+      "affiliate_code": "",
+      "page_path": "summaries/mystery-life.html",
+      "aliases": [],
+      "edition_notes": [
+        "مرجع لطبعة ورقية تجارية لدى مكتبات الشروق، لا تحميل مجاني. التوفر والتوصيل والتكلفة تحتاج إلى مراجعة قبل الشراء."
+      ],
+      "access_format": "paper",
+      "availability_note": "مرجع لطبعة ورقية تجارية لدى مكتبات الشروق، لا تحميل مجاني. التوفر والتوصيل والتكلفة تحتاج إلى مراجعة قبل الشراء.",
+      "alternative_routes": [],
+      "affiliate_disclosure": false,
+      "verified_at": "2026-11-24",
+      "routing_status": "active"
+    },
+    {
+      "id": "mystery-death",
+      "title": "لغز الموت",
+      "author": "مصطفى محمود",
+      "category": "فلسفة وفكر",
+      "description": "توثق مكتبات الشروق عنوان لغز الموت ومؤلفه والغلاف المرتبط بطبعتها. لم نقرأ الكتاب كاملا لهذه الصفحة ولم نثبت تحميلا مرخصا له. نعتمد في خريطة الموضوعات على عرض مستقل في islam.museum يحيل إلى طبعة دار العودة. اخت",
+      "cover_image": "https://www.shoroukbookstores.com/images/Books/original/9789778712438.jpg",
+      "monetization_type": "direct_store",
+      "source_name": "مكتبات الشروق",
+      "destination_url": "https://www.shoroukbookstores.com/books/view.aspx?id=9cb991ac-9b5e-4c63-88ea-4619c4137078",
+      "affiliate_code": "",
+      "page_path": "summaries/mystery-death.html",
+      "aliases": [],
+      "edition_notes": [
+        "مرجع لطبعة ورقية تجارية لدى مكتبات الشروق، لا تحميل مجاني. التوفر والتوصيل والتكلفة تحتاج إلى مراجعة قبل الشراء."
+      ],
+      "access_format": "paper",
+      "availability_note": "مرجع لطبعة ورقية تجارية لدى مكتبات الشروق، لا تحميل مجاني. التوفر والتوصيل والتكلفة تحتاج إلى مراجعة قبل الشراء.",
+      "alternative_routes": [],
+      "affiliate_disclosure": false,
+      "verified_at": "2026-11-24",
+      "routing_status": "active"
+    },
+    {
+      "id": "i-saw-god",
+      "title": "رأيت الله",
+      "author": "مصطفى محمود",
+      "category": "فلسفة وفكر",
+      "description": "تثبت صفحة مكتبات الشروق أن رأيت الله كتاب لمصطفى محمود وتعرض غلاف طبعة ورقية تجارية. ويصف سجل مستقل في islam.museum بناء طبعة دار المعارف: مقالة عن رؤية العقل والبصيرة، تليها نصوص من المواقف والمخاطبات للنفري و",
+      "cover_image": "https://www.shoroukbookstores.com/images/Books/original/9789778713718.jpg",
+      "monetization_type": "direct_store",
+      "source_name": "مكتبات الشروق",
+      "destination_url": "https://www.shoroukbookstores.com/books/view.aspx?id=2c803826-6691-4cb6-a869-26059878c6f5",
+      "affiliate_code": "",
+      "page_path": "summaries/i-saw-god.html",
+      "aliases": [],
+      "edition_notes": [
+        "مرجع لطبعة ورقية تجارية لدى مكتبات الشروق، لا تحميل مجاني. التوفر والتوصيل والتكلفة تحتاج إلى مراجعة قبل الشراء."
+      ],
+      "access_format": "paper",
+      "availability_note": "مرجع لطبعة ورقية تجارية لدى مكتبات الشروق، لا تحميل مجاني. التوفر والتوصيل والتكلفة تحتاج إلى مراجعة قبل الشراء.",
+      "alternative_routes": [],
+      "affiliate_disclosure": false,
+      "verified_at": "2026-11-24",
+      "routing_status": "active"
     }
   ]
     }
