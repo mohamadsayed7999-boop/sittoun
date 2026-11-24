@@ -2915,6 +2915,75 @@
       "affiliate_disclosure": false,
       "verified_at": "2026-11-24",
       "routing_status": "active"
+    },
+    {
+      "id": "the-impossible-mahmoud",
+      "title": "المستحيل",
+      "author": "مصطفى محمود",
+      "category": "روايات وأدب",
+      "description": "نثبت أولا هوية العمل: المستحيل لمصطفى محمود في طبعة دار الشروق الواردة لدى البائع، لا أي كتاب آخر يحمل الكلمة نفسها. يعتمد هذا المدخل على وصف الناشر لدى ديوان وبيانات الطبعة، وليس على قراءة النص كاملا. وصف النا",
+      "cover_image": "https://www.shoroukbookstores.com/images/Books/original/9789778800289.jpg",
+      "monetization_type": "direct_store",
+      "source_name": "مكتبات الشروق",
+      "destination_url": "https://www.shoroukbookstores.com/books/view.aspx?id=0996c264-f11a-40d6-8e34-b722c78c6260",
+      "affiliate_code": "",
+      "page_path": "summaries/the-impossible-mahmoud.html",
+      "aliases": [],
+      "edition_notes": [
+        "مرجع لطبعة ورقية تجارية لدى مكتبات الشروق، لا تحميل مجاني. التوفر والتوصيل والتكلفة تحتاج إلى مراجعة قبل الشراء."
+      ],
+      "access_format": "paper",
+      "availability_note": "مرجع لطبعة ورقية تجارية لدى مكتبات الشروق، لا تحميل مجاني. التوفر والتوصيل والتكلفة تحتاج إلى مراجعة قبل الشراء.",
+      "alternative_routes": [],
+      "affiliate_disclosure": false,
+      "verified_at": "2026-11-24",
+      "routing_status": "active"
+    },
+    {
+      "id": "dreams-mahmoud",
+      "title": "الأحلام",
+      "author": "مصطفى محمود",
+      "category": "فلسفة وفكر",
+      "description": "هذه صفحة لكتاب الأحلام لمصطفى محمود في الطبعة المحددة بالمصدر. لم نطلع على النص كاملا، ولا تكفي نبذة سيرة المؤلف لمعرفة محتوى فصوله. يعتمد هذا المدخل على بيانات الطبعة ومقتطف قصير ظاهر لدى أبجد عن طلب اليقين. ل",
+      "cover_image": "https://www.shoroukbookstores.com/images/Books/original/9789778713701.jpg",
+      "monetization_type": "direct_store",
+      "source_name": "مكتبات الشروق",
+      "destination_url": "https://www.shoroukbookstores.com/books/view.aspx?id=e3dcbf8d-9760-4164-8db2-038c6f432621",
+      "affiliate_code": "",
+      "page_path": "summaries/dreams-mahmoud.html",
+      "aliases": [],
+      "edition_notes": [
+        "مرجع لطبعة ورقية تجارية لدى مكتبات الشروق، لا تحميل مجاني. التوفر والتوصيل والتكلفة تحتاج إلى مراجعة قبل الشراء."
+      ],
+      "access_format": "paper",
+      "availability_note": "مرجع لطبعة ورقية تجارية لدى مكتبات الشروق، لا تحميل مجاني. التوفر والتوصيل والتكلفة تحتاج إلى مراجعة قبل الشراء.",
+      "alternative_routes": [],
+      "affiliate_disclosure": false,
+      "verified_at": "2026-11-24",
+      "routing_status": "active"
+    },
+    {
+      "id": "being-nothingness-mahmoud",
+      "title": "الوجود والعدم",
+      "author": "مصطفى محمود",
+      "category": "فلسفة وفكر",
+      "description": "الوجود والعدم هنا كتاب مصطفى محمود، وليس عمل جان بول سارتر الشهير الذي يشار إليه بعنوان قريب. تثبت بيانات المصدر هوية الطبعة، ويتيح وصف الناشر لدى ديوان مقتطفا عن السببية والمشيئة والعمل. لم نقرأ النص كاملا، لذ",
+      "cover_image": "https://www.shoroukbookstores.com/images/Books/original/9789778712476.jpg",
+      "monetization_type": "direct_store",
+      "source_name": "مكتبات الشروق",
+      "destination_url": "https://www.shoroukbookstores.com/books/view.aspx?id=ee02f453-5e75-4739-9051-ac0695e1058f",
+      "affiliate_code": "",
+      "page_path": "summaries/being-nothingness-mahmoud.html",
+      "aliases": [],
+      "edition_notes": [
+        "مرجع لطبعة ورقية تجارية لدى مكتبات الشروق، لا تحميل مجاني. التوفر والتوصيل والتكلفة تحتاج إلى مراجعة قبل الشراء."
+      ],
+      "access_format": "paper",
+      "availability_note": "مرجع لطبعة ورقية تجارية لدى مكتبات الشروق، لا تحميل مجاني. التوفر والتوصيل والتكلفة تحتاج إلى مراجعة قبل الشراء.",
+      "alternative_routes": [],
+      "affiliate_disclosure": false,
+      "verified_at": "2026-11-24",
+      "routing_status": "active"
     }
   ]
     }
