@@ -48,7 +48,7 @@ const panel=document.createElement('section');panel.className='callout egypt-rou
 const h=document.createElement('h2');h.textContent=route.inquiry?'مسار استفسار داخل مصر':'طبعة ورقية لدى بائع مصري';panel.append(h);
 const p=document.createElement('p');p.textContent=route.inquiry?'فهرس الشروق يعرض هذه الطبعة متاحة، لكن واجهة التصفح الدولي تخفي سلة هذا الكتاب. هذا مسار للاستفسار المحلي فقط، وليس شراء إلكترونيا مؤكدا.':'تحققنا في 24 نوفمبر 2026 من أن صفحة هذه الطبعة لدى مكتبات الشروق تعرض الكتاب متاحا وزر إضافة للسلة. هذا بديل ورقي مدفوع من بائع له فروع في مصر، وليس ملف PDF أو كتابا إلكترونيا.';panel.append(p);
 if(route.edition){const e=document.createElement('p');e.textContent=route.edition;panel.append(e);}
-const caveat=document.createElement('p');caveat.textContent='المخزون قد يتغير. لم نختبر قبول عنوان توصيل بعينه، بما فيه بني سويف. تأكد من التوصيل والتكلفة مع المكتبة قبل الدفع.';panel.append(caveat);
+const caveat=document.createElement('p');caveat.textContent='المخزون قد يتغير. لم نختبر قبول عنوان توصيل بعينه. تأكد من التوصيل والتكلفة مع المكتبة قبل الدفع.';panel.append(caveat);
 for(const [url,label] of [[route.url,'الطبعة الورقية لدى الشروق ↗'],['https://www.shoroukbookstores.com/contact/','اسأل المكتبة عن التوفر والتوصيل ↗'],['https://www.shoroukbookstores.com/branches','فروع المكتبة في مصر ↗']]){const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener noreferrer';a.className='btn';a.textContent=label;panel.append(a,document.createTextNode(' '));}
 source.before(panel);
 })();
