@@ -41,7 +41,3 @@ for path in sorted(ROOT.rglob('*.html')):
   path.write_text(value)
   count += 1
 print('Analytics loader/policy updated on', count, 'HTML files. Body/UI unchanged.')
-
-# Approved text-only privacy correction.
-p = ROOT / "privacy.html"
-p.write_text(p.read_text().replace('لا نبيع بياناتك ولا نشاركها مع أي جهة إلا عند وجود التزام قانوني.','لا نبيع بياناتك. جهزنا Google Analytics لإحصائيات الزيارات وتحسين تجربة الموقع، والقياس غير مفعّل حاليا لحين إضافة معرّف القياس. عند تفعيله قد تستقبل Google بيانات الاستخدام والتفاعل وتستخدم ملفات ارتباط للتحليل؛ لا نرسل نصوص التلخيص أو الملفات أو رسائل واتساب عبر أداة القياس. يلزم ضبط متطلبات الموافقة المناسبة للزوار قبل التفعيل.'))
