@@ -53,9 +53,8 @@ window.SITTOUN_ANALYTICS = Object.freeze({ measurementId: 'G-9J3NGKNGWL', debug:
   close.addEventListener('click', hide);
   settings.addEventListener('click', open);
   panel.hidden = choice !== null; settings.hidden = choice === null;
-  document.body.append(panel);
   const settingsHost = document.getElementById('analytics-privacy-control');
-  if (settingsHost) { settingsHost.append(settings); settings.hidden = false; }
+  if (settingsHost) { settingsHost.append(settings, panel); settings.hidden = !panel.hidden; }
   if (choice === 'granted') start();
   addEventListener('storage', event => {
     if (event.key === consentKey && window.__sittounGA4) {
