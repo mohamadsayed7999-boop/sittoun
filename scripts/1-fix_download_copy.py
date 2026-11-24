@@ -35,3 +35,17 @@ for p in list((R/'js').glob('*free*.js'))+[R/'free-books.html']:
    t=re.sub(pat,lambda m:m[1]+label+m[3],t,flags=re.S)
  p.write_text(t)
 (R/'data/seo-books.json').write_text(json.dumps(reg,ensure_ascii=False,indent=2)+'\n')
+# Clarify only official Hindawi file actions, retaining source links in citations.
+import re
+for p in (R/'summaries').glob('*.html'):
+ s=BeautifulSoup(p.read_text(),'html.parser');top=s.select_one('.book-landing-route');a=top.select_one('a')if top else None
+ if a and a.get('href','').startswith('https://downloads.hindawi.org/books/')and a['href'].endswith('.pdf'):
+  a.string='تحميل PDF مجانا ↓';note=top.select_one('p')
+  if note:note.string='ملف PDF الرسمي مباشرة من مؤسسة هنداوي. يرسل المصدر الملف للتنزيل؛ قد يطلب متصفحك تأكيد الحفظ. نبذة هذه الصفحة ليست نص الكتاب.'
+  p.write_text(str(s))
+for p in list((R/'js').glob('*free*.js'))+[R/'free-books.html']:
+ t=p.read_text()
+ for phrase in ['اقرأ مجانا لدى المصدر','اقرأ مجانًا لدى المصدر']:
+  # Remaining occurrences are official Hindawi links; viewer-only exceptions were relabeled above.
+  t=t.replace(phrase,'تحميل PDF مجانا')
+ p.write_text(t)
