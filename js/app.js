@@ -34,3 +34,5 @@
     }
   });
 })();
+
+(()=>{const sources=document.querySelectorAll('.book-source');for(const s of sources){const links=[...s.querySelectorAll('a[href]')];const jarir=links.some(a=>{try{return new URL(a.href).hostname==='www.jarir.com'}catch{return false}});const paid=/مدفوع|شراء|اقتناء/.test(s.textContent);if(!jarir&&!paid)continue;if(/مجانية رسمية|النسخة المجانية|نسخة متاحة قانونيا/.test(s.textContent)&&!jarir)continue;const p=document.createElement('p');p.className='callout acquisition-note';p.textContent=jarir?'مرجع لطبعة ورقية لدى جرير، بواجهة السعودية. لم نثبت إمكانية طلبها إلى مصر، وليست نسخة إلكترونية أو تحميلا. لا تعتمد هذا الرابط كخيار شراء محلي مؤكد.':'رابط لتوثيق الطبعة. التوفر وإمكان الشراء من مصر لم يتحققا لهذا الرابط، ولا يعني وجوده إتاحة تحميل أو نسخة إلكترونية. نراجع بدائل محلية مناسبة.';s.prepend(p);for(const a of links){if(a.classList.contains('btn')&&/اقتناء|شراء/.test(a.textContent))a.textContent='مرجع الطبعة الورقية ↗';}}})();
