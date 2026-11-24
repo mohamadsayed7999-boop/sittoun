@@ -98,3 +98,5 @@ html{scroll-padding-top:150px}
  .catalog-counts{gap:8px}.catalog-count{padding:14px 7px}.catalog-count dt{font-size:.73rem}.catalog-count dd{font-size:1.55rem}
 }
 @media(prefers-reduced-motion:reduce){html,.top nav{scroll-behavior:auto}.hero-actions .btn,#library-search,.top nav a{transition:none}.hero-actions .btn:hover,.hero-actions .btn:active{transform:none}}
+/* Keep the five primary labels whole on common phone widths. */
+@media(max-width:760px){.top .bar{gap:8px}.top nav{gap:2px;scroll-snap-type:x mandatory;scroll-padding-inline:2px}.top nav a{min-width:40px;padding-inline:4px;font-size:.72rem;scroll-snap-align:start}}
