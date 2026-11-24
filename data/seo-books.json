@@ -1251,6 +1251,7 @@
     "url": "summaries/disease-cure.html",
     "free": false,
     "source_links": [
+      "https://d1.islamhouse.com/data/ar/ih_books/single4/ar-aldaa-waldawa.pdf",
       "https://www.ibnelqayem.com/ar/books/16"
     ]
   },
@@ -1286,6 +1287,7 @@
     "url": "summaries/mutanabbi-barquqi.html",
     "free": false,
     "source_links": [
+      "https://downloads.hindawi.org/books/82959503.pdf",
       "https://www.hindawi.org/books/82959503/"
     ]
   },
@@ -2743,6 +2745,7 @@
     "url": "summaries/tahafut-falasifa.html",
     "free": false,
     "source_links": [
+      "http://mc.dlib.nyu.edu/files/books/auc_aco000043/auc_aco000043_lo.pdf",
       "https://sites.dlib.nyu.edu/viewer/books/auc_aco000043/display?lang=ar"
     ]
   },
@@ -9107,6 +9110,54 @@
     "source_links": [
       "https://downloads.hindawi.org/books/42614297.pdf",
       "https://www.safahat.org/books/42614297/"
+    ]
+  },
+  {
+    "url": "summaries/sallabi-43.html",
+    "title": "الدولة العثمانية: عوامل النهوض وأسباب السقوط",
+    "free": true,
+    "source_links": [
+      "https://www.alsalabi.com/media/uploads/bookspdf/2022/12/08/a19a.pdf"
+    ]
+  },
+  {
+    "url": "summaries/sallabi-62.html",
+    "title": "صفحات من تاريخ ليبيا الإسلامي والشمال الإفريقي",
+    "free": true,
+    "source_links": [
+      "https://www.alsalabi.com/media/uploads/bookspdf/2024/08/20/a38.pdf"
+    ]
+  },
+  {
+    "url": "summaries/sallabi-66.html",
+    "title": "عصر الدولتين الأموية والعباسية وظهور فكر الخوارج",
+    "free": true,
+    "source_links": [
+      "https://www.alsalabi.com/media/uploads/bookspdf/2024/08/20/a42.pdf"
+    ]
+  },
+  {
+    "url": "summaries/sallabi-41.html",
+    "title": "الصراع بين أهل السنة والرافضة: الدولة العبيدية الفاطمية",
+    "free": true,
+    "source_links": [
+      "https://www.alsalabi.com/media/uploads/bookspdf/2024/08/20/a16.pdf"
+    ]
+  },
+  {
+    "url": "summaries/sallabi-56.html",
+    "title": "تاريخ دولتي المرابطين والموحدين في الشمال الإفريقي",
+    "free": true,
+    "source_links": [
+      "https://www.alsalabi.com/media/uploads/bookspdf/2024/08/20/a32.pdf"
+    ]
+  },
+  {
+    "url": "summaries/sallabi-35.html",
+    "title": "الثمار الزكية للحركة السنوسية في ليبيا",
+    "free": true,
+    "source_links": [
+      "https://www.alsalabi.com/media/uploads/bookspdf/2024/08/28/alsanoseya.pdf"
     ]
   }
 ]
