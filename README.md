@@ -66,3 +66,7 @@ git push -u origin main
 أضف في <head> الصفحة المطلوبة (بعد رفع الصورة إلى المستودع):
 <meta property="og:image" content="https://USERNAME.github.io/sittoun/img/cover.png">
 وأضف img-src المناسب إن استخدمت نطاقاً آخر.
+
+## Google Analytics 4
+
+Installation is ready but disabled until a real Measurement ID is set in `js/analytics.js`. See [ANALYTICS.md](ANALYTICS.md) for setup, privacy and verification steps.
