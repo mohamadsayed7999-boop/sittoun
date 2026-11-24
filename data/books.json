@@ -2678,6 +2678,174 @@
       "affiliate_disclosure": false,
       "verified_at": null,
       "routing_status": "active"
+    },
+    {
+      "id": "critique-pure-reason",
+      "title": "نقد العقل المحض",
+      "author": "إيمانويل كانط",
+      "category": "فلسفة وفكر",
+      "description": "يسأل نقد العقل المحض عن قدرة المعرفة وشروطها وحدودها، لا عن طريقة أسرع لكسب جدال. نبني هذا المدخل على وصف طبعة التنوير بترجمة موسى وهبه، وعلى مقتطف من مقدمة الطبعة الثانية في ترجمة إنجليزية متاحة لدى جامعة واشن",
+      "cover_image": "https://daraltanweer.net/public/assets/uploads/2017/12/%D9%86%D9%82%D8%AF.%D8%A7%D9%84%D8%B9%D9%82%D9%84.jpg",
+      "monetization_type": "direct_publisher",
+      "source_name": "دار التنوير",
+      "destination_url": "https://daraltanweer.net/public/books/%D9%86%D9%82%D8%AF-%D8%A7%D9%84%D8%B9%D9%82%D9%84-%D8%A7%D9%84%D9%85%D8%AD%D8%B6",
+      "affiliate_code": "",
+      "page_path": "summaries/critique-pure-reason.html",
+      "aliases": [],
+      "edition_notes": [
+        "مرجع طبعة تجارية وليس تحميلا مجانيا. لم نثبت التوفر أو الشحن أو تفعيل الخدمة في مصر. راجع المصدر قبل الشراء."
+      ],
+      "access_format": "paper",
+      "availability_note": "مرجع طبعة تجارية وليس تحميلا مجانيا. لم نثبت التوفر أو الشحن أو تفعيل الخدمة في مصر. راجع المصدر قبل الشراء.",
+      "alternative_routes": [],
+      "affiliate_disclosure": false,
+      "verified_at": "2026-11-24",
+      "routing_status": "active"
+    },
+    {
+      "id": "out-of-script",
+      "title": "الخروج عن النص",
+      "author": "محمد طه",
+      "category": "فلسفة وفكر",
+      "description": "المقصود الخروج عن النص لمحمد طه في إصداره الأصلي، لا كتاب الخروج عن النص من جديد. يستند هذا المدخل إلى تعريف iRead بالكتاب وبيانات الطبعة التجارية، وليس إلى قراءة كاملة لفصوله. تظهر في التعريف موضوعات النظر إلى",
+      "cover_image": "https://www.jarir.com/cdn-cgi/image/fit=contain,width=380,height=380,quality=85,metadata=none,format=auto/https://ak-asset.jarir.com/akeneo-prod/asset/m1images/5/2/527950.jpg",
+      "monetization_type": "direct_store",
+      "source_name": "مكتبة جرير",
+      "destination_url": "https://www.jarir.com/ae-ar/arabic-books-527950.html",
+      "affiliate_code": "",
+      "page_path": "summaries/out-of-script.html",
+      "aliases": [],
+      "edition_notes": [
+        "مرجع طبعة تجارية وليس تحميلا مجانيا. لم نثبت التوفر أو الشحن أو تفعيل الخدمة في مصر. راجع المصدر قبل الشراء."
+      ],
+      "access_format": "paper",
+      "availability_note": "مرجع طبعة تجارية وليس تحميلا مجانيا. لم نثبت التوفر أو الشحن أو تفعيل الخدمة في مصر. راجع المصدر قبل الشراء.",
+      "alternative_routes": [],
+      "affiliate_disclosure": false,
+      "verified_at": "2026-11-24",
+      "routing_status": "active"
+    },
+    {
+      "id": "letting-go",
+      "title": "السماح بالرحيل",
+      "author": "ديفيد آر هاوكينز",
+      "category": "فلسفة وفكر",
+      "description": "يقدم وصف السماح بالرحيل لديفيد آر هاوكينز فكرة التسليم بوصفها وسيلة للتعامل مع العوائق الداخلية والمشاعر السلبية، ويربطها المؤلف بتصوره للوعي والتنوير. تعتمد هذه الصفحة على التعريف المنشور في جرير ومادة تعريف أ",
+      "cover_image": "https://www.jarir.com/cdn-cgi/image/fit=contain,width=380,height=380,quality=85,metadata=none,format=auto/https://ak-asset.jarir.com/akeneo-prod/asset/m1images/4/5/459427.jpg",
+      "monetization_type": "direct_store",
+      "source_name": "مكتبة جرير",
+      "destination_url": "https://www.jarir.com/arabic-books-459427.html",
+      "affiliate_code": "",
+      "page_path": "summaries/letting-go.html",
+      "aliases": [],
+      "edition_notes": [
+        "مرجع طبعة تجارية وليس تحميلا مجانيا. لم نثبت التوفر أو الشحن أو تفعيل الخدمة في مصر. راجع المصدر قبل الشراء."
+      ],
+      "access_format": "paper",
+      "availability_note": "مرجع طبعة تجارية وليس تحميلا مجانيا. لم نثبت التوفر أو الشحن أو تفعيل الخدمة في مصر. راجع المصدر قبل الشراء.",
+      "alternative_routes": [],
+      "affiliate_disclosure": false,
+      "verified_at": "2026-11-24",
+      "routing_status": "active"
+    },
+    {
+      "id": "zero-one",
+      "title": "من صفر إلى واحد",
+      "author": "بيتر ثييل وبليك ماسترز",
+      "category": "مال وأعمال",
+      "description": "يضع تعريف من صفر إلى واحد فرقا بين تكرار شيء معروف وبين إنشاء شيء جديد. قد يزيد التكرار العدد أو يوسع الانتشار، لكن الانتقال إلى الجديد يغير ما يمكن تقديمه أصلا. يستند هذا المدخل إلى التعريف الموسع لنسخة صوتية ",
+      "cover_image": "https://www.jarir.com/cdn-cgi/image/fit=contain,width=380,height=380,quality=85,metadata=none,format=auto/https://ak-asset.jarir.com/akeneo-prod/asset/m1images/4/4/440275.jpg",
+      "monetization_type": "direct_store",
+      "source_name": "مكتبة جرير",
+      "destination_url": "https://www.jarir.com/jarir-publication-440275.html",
+      "affiliate_code": "",
+      "page_path": "summaries/zero-one.html",
+      "aliases": [],
+      "edition_notes": [
+        "مرجع طبعة تجارية وليس تحميلا مجانيا. لم نثبت التوفر أو الشحن أو تفعيل الخدمة في مصر. راجع المصدر قبل الشراء."
+      ],
+      "access_format": "paper",
+      "availability_note": "مرجع طبعة تجارية وليس تحميلا مجانيا. لم نثبت التوفر أو الشحن أو تفعيل الخدمة في مصر. راجع المصدر قبل الشراء.",
+      "alternative_routes": [],
+      "affiliate_disclosure": false,
+      "verified_at": "2026-11-24",
+      "routing_status": "active"
+    },
+    {
+      "id": "lean-startup",
+      "title": "إستراتيجية لين لتأسيس المشروعات",
+      "author": "إريك ريس",
+      "category": "مال وأعمال",
+      "description": "يعرض إريك ريس المشروع الناشئ كمؤسسة تعمل في قدر كبير من عدم اليقين. قد ينشغل فريق أشهرا بإتقان منتج ثم يكتشف أن الناس لا يريدونه. يعتمد هذا المدخل على صفحة المنهج وبنية الكتاب في موقعه الرسمي، وعلى بيانات الإصد",
+      "cover_image": "https://www.jarir.com/cdn-cgi/image/fit=contain,width=380,height=380,quality=85,metadata=none,format=auto/https://ak-asset.jarir.com/akeneo-prod/asset/m1/delta/jbb282206014.jpg",
+      "monetization_type": "direct_store",
+      "source_name": "مكتبة جرير",
+      "destination_url": "https://www.jarir.com/jarir-publication-282206014.html",
+      "affiliate_code": "",
+      "page_path": "summaries/lean-startup.html",
+      "aliases": [
+        "الشركة الناشئة الرشيقة",
+        "الشركة الناشئة المرنة",
+        "The Lean Startup"
+      ],
+      "edition_notes": [
+        "كتاب إلكتروني مدفوع في تطبيق قارئ جرير، ليس PDF مجانيا. إتاحة الشراء والتفعيل في مصر لم تثبت."
+      ],
+      "access_format": "ebook",
+      "availability_note": "كتاب إلكتروني مدفوع في تطبيق قارئ جرير، ليس PDF مجانيا. إتاحة الشراء والتفعيل في مصر لم تثبت.",
+      "alternative_routes": [],
+      "affiliate_disclosure": false,
+      "verified_at": "2026-11-24",
+      "routing_status": "active"
+    },
+    {
+      "id": "art-war-suntzu",
+      "title": "فن الحرب",
+      "author": "سون تزو، ترجمة مالك سلمان",
+      "category": "فلسفة وفكر",
+      "description": "هذه قراءة في الفصول الثلاثة الأولى من فن الحرب لسون تزو، عبر ترجمة ليونيل جايلز الإنجليزية المتاحة قانونيا لدى Standard Ebooks. أما المرجع العربي المختار فهو طبعة الساقي بترجمة مالك سلمان؛ لا ننسب إليها نصوصا ل",
+      "cover_image": "https://daralsaqi.com/uploads/books/image/fan_alharb_ED2_jpg.png",
+      "monetization_type": "direct_publisher",
+      "source_name": "دار الساقي",
+      "destination_url": "https://daralsaqi.com/book/9786140321328",
+      "affiliate_code": "",
+      "page_path": "summaries/art-war-suntzu.html",
+      "aliases": [],
+      "edition_notes": [
+        "مرجع طبعة تجارية وليس تحميلا مجانيا. لم نثبت التوفر أو الشحن أو تفعيل الخدمة في مصر. راجع المصدر قبل الشراء."
+      ],
+      "access_format": "paper",
+      "availability_note": "مرجع طبعة تجارية وليس تحميلا مجانيا. لم نثبت التوفر أو الشحن أو تفعيل الخدمة في مصر. راجع المصدر قبل الشراء.",
+      "alternative_routes": [],
+      "affiliate_disclosure": false,
+      "verified_at": "2026-11-24",
+      "routing_status": "active"
+    },
+    {
+      "id": "hail-mary",
+      "title": "الرحلة الفضائية المستحيلة",
+      "author": "آندي ويير",
+      "category": "روايات وأدب",
+      "description": "يقدم موقع آندي ويير مشروع آفي ماريا، المنشور بالعربية بعنوان الرحلة الفضائية المستحيلة، من لحظة استيقاظ رايلاند جريس بعيدا عن الأرض وذاكرته مضطربة. لا يعرف اسمه أو مهمته أولا، ويجد نفسه أمام خطر يتجاوز نجاته ال",
+      "cover_image": "https://www.jarir.com/cdn-cgi/image/fit=contain,width=380,height=380,quality=85,metadata=none,format=auto/https://ak-asset.jarir.com/akeneo-prod/asset/0/5/5/5/055552e40d4c301af065afdca3ed14222691c41a_590218.jpg",
+      "monetization_type": "direct_store",
+      "source_name": "مكتبة جرير",
+      "destination_url": "https://www.jarir.com/arabic-books-590218.html",
+      "affiliate_code": "",
+      "page_path": "summaries/hail-mary.html",
+      "aliases": [
+        "مشروع آفي ماريا",
+        "Project Hail Mary"
+      ],
+      "edition_notes": [
+        "مرجع طبعة تجارية وليس تحميلا مجانيا. لم نثبت التوفر أو الشحن أو تفعيل الخدمة في مصر. راجع المصدر قبل الشراء."
+      ],
+      "access_format": "paper",
+      "availability_note": "مرجع طبعة تجارية وليس تحميلا مجانيا. لم نثبت التوفر أو الشحن أو تفعيل الخدمة في مصر. راجع المصدر قبل الشراء.",
+      "alternative_routes": [],
+      "affiliate_disclosure": false,
+      "verified_at": "2026-11-24",
+      "routing_status": "active"
     }
   ]
-}
+    }
