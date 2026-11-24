@@ -49,3 +49,6 @@ for p in list((R/'js').glob('*free*.js'))+[R/'free-books.html']:
   # Remaining occurrences are official Hindawi links; viewer-only exceptions were relabeled above.
   t=t.replace(phrase,'تحميل PDF مجانا')
  p.write_text(t)
+
+# Replace an inconsistent publisher route with the verified exact-title bookstore reference.
+p=R/'data/books.json';d=json.loads(p.read_text());b=next(x for x in d['books']if x['id']=='munkasira-qulubuhum');old=b['destination_url'];new='https://www.shoroukbookstores.com/books/view.aspx?id=4408f9a8-ba55-450c-85c8-2710075269bd';b['destination_url']=new;b['source_name']='مكتبات الشروق';b['verified_at']='2026-11-25';p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n');p=R/b['page_path'];s=p.read_text().replace(old,new).replace('مكتبة كلمات','مكتبات الشروق');p.write_text(s)
