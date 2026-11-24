@@ -1,0 +1,17 @@
+/* Paid registry only. No layout or button label changes; no external analytics. */
+(()=>{'use strict';
+const script=document.currentScript;const root=new URL('../',script.src);const KEY='sittoun.paidClicks.v1';
+function safe(raw){try{const u=new URL(raw);return /^https?:$/.test(u.protocol)&&u.hostname&&!u.username&&!u.password?u.href:null}catch{return null}}
+function count(id,route){try{const x=JSON.parse(localStorage.getItem(KEY)||'{}');if(!x||typeof x!=='object'||Array.isArray(x))return;const k=id+':'+route;const n=x[k];x[k]=Number.isSafeInteger(n)&&n>=0?n+1:1;localStorage.setItem(KEY,JSON.stringify(x))}catch{/* Storage disabled: routing must still work. */}}
+function route(book,n){return n==='0'?book:(book.alternative_routes||[]).find(r=>r.route_id===n)}
+async function load(){const response=await fetch(new URL('data/books.json',root));if(!response.ok)throw Error('registry');const d=await response.json();if(!Array.isArray(d.books))throw Error('registry');return d.books}
+function coupon(book){if(!book.affiliate_code||!book.affiliate_code.trim())return;const host=document.querySelector('.book-source');if(!host)return;const box=document.createElement('section');box.className='callout';const text=document.createElement('p');text.textContent='كود الخصم: '+book.affiliate_code;const btn=document.createElement('button');btn.className='btn';btn.type='button';btn.textContent='نسخ الكود';const status=document.createElement('p');status.setAttribute('role','status');btn.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(book.affiliate_code);status.textContent='تم نسخ الكود.'}catch{status.textContent='تعذر النسخ التلقائي. يمكنك تحديد الكود ونسخه يدويا.'}});box.append(text,btn,status);host.append(box)}
+if(document.body.dataset.bookRouter==='true'){
+ const msg=document.getElementById('route-status'),fallback=document.getElementById('route-fallback');
+ const fail=()=>{msg.textContent='تعذر فتح هذا المرجع. ارجع إلى صفحة الكتاب لاختيار مصدره.';fallback.hidden=true};
+ (async()=>{try{const q=new URLSearchParams(location.search);if([...q.keys()].some(k=>!['id','route'].includes(k))||q.getAll('id').length!==1||q.getAll('route').length>1)throw Error('query');const id=q.get('id'),n=q.get('route')||'0';if(!/^[a-z0-9-]+$/.test(id||'')||!/^\d+$/.test(n))throw Error('id');const book=(await load()).find(b=>b.id===id);if(!book||book.routing_status!=='active')throw Error('book');const selected=route(book,n),dest=selected&&safe(selected.destination_url);if(!dest)throw Error('destination');fallback.href=dest;fallback.rel='nofollow sponsored noopener noreferrer';fallback.hidden=false;msg.textContent='جار فتح المصدر المحفوظ للكتاب…';count(id,n);location.replace(dest)}catch{fail()}})();
+}else{
+ const id=document.body.dataset.paidBookId;if(!id)return;
+ load().then(books=>{const book=books.find(b=>b.id===id);if(!book||book.routing_status!=='active')return;const targets=new Map([[book.destination_url,'0'],...(book.alternative_routes||[]).map(a=>[a.destination_url,a.route_id])]);for(const a of document.querySelectorAll('a[href]')){const raw=a.dataset.destination||a.getAttribute('href');if(!targets.has(raw))continue;a.dataset.destination=raw;const link=new URL('go.html',root);link.searchParams.set('id',book.id);link.searchParams.set('route',targets.get(raw));a.href=link.href;a.target='_blank';a.rel='nofollow sponsored noopener noreferrer';}coupon(book)}).catch(()=>{/* Static generated links remain usable. */});
+}
+})();
