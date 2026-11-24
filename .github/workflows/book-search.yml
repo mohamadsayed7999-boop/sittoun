@@ -14,7 +14,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build static book metadata and directory
-        run: python3 scripts/build_seo.py --direct-pdf-repair
+        run: |
+          python3 -m pip install beautifulsoup4
+          python3 scripts/1-fix_download_copy.py
       - name: Commit reviewed generated pages
         run: |
           git config user.name 'github-actions[bot]'
