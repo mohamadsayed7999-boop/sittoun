@@ -30,7 +30,7 @@ window.SITTOUN_ANALYTICS = Object.freeze({ measurementId: 'G-9J3NGKNGWL', debug:
   actions.append(accept, reject, policy, close); panel.append(heading, description, actions);
   const settings = document.createElement('button'); settings.type = 'button'; settings.className = 'analytics-consent-settings'; settings.textContent = 'إعدادات الإحصائيات';
   function open() { panel.hidden = false; settings.hidden = true; accept.focus({preventScroll:true}); }
-  function hide() { panel.hidden = true; settings.hidden = false; }
+  function hide() { panel.hidden = true; settings.hidden = false; if (settings.isConnected) settings.focus({preventScroll:true}); }
   function save(value) { choice = value; try { localStorage.setItem(consentKey, JSON.stringify({value,at:Date.now()})); } catch { /* Choice still applies on this page. */ } }
   function clearAnalyticsCookies() {
     const paths = [...new Set(['/', root.pathname, root.pathname.replace(/\/$/, '')])];
@@ -53,7 +53,9 @@ window.SITTOUN_ANALYTICS = Object.freeze({ measurementId: 'G-9J3NGKNGWL', debug:
   close.addEventListener('click', hide);
   settings.addEventListener('click', open);
   panel.hidden = choice !== null; settings.hidden = choice === null;
-  document.body.append(panel, settings);
+  document.body.append(panel);
+  const settingsHost = document.getElementById('analytics-privacy-control');
+  if (settingsHost) { settingsHost.append(settings); settings.hidden = false; }
   if (choice === 'granted') start();
   addEventListener('storage', event => {
     if (event.key === consentKey && window.__sittounGA4) {
