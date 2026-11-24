@@ -74,3 +74,7 @@ html{scroll-padding-top:150px}
 .search-field .search-icon{position:absolute;inset-inline-start:18px;top:50%;transform:translateY(-50%);font-size:1.05rem;line-height:1;pointer-events:none;z-index:1}
 .search-field #library-search{padding-inline-start:50px}
 @media(max-width:760px){.cat-nav{top:72px;padding:10px 2px}.cat-label{display:none}.cat-nav .cat-search{margin-inline-start:0}}
+/* Portrait book covers stay whole inside review video buttons. */
+.summary-video .vid{display:flex;position:relative;width:100%;min-height:360px;aspect-ratio:3/4;max-width:300px;margin:0 auto;align-items:center;justify-content:flex-end;flex-direction:column;background:var(--soft)}
+.summary-video .vid img{object-fit:contain;padding:10px 10px 40px;box-sizing:border-box}
+.summary-video .vid>span:not(.book-art){position:relative;z-index:1;display:block;width:100%;padding:10px;background:var(--soft);color:var(--fg);font-weight:700;text-align:center}
