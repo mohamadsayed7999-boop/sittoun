@@ -14,14 +14,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build static book metadata and directory
-        run: python3 scripts/build_seo.py
+        run: python3 scripts/build_seo.py --direct-pdf-repair
       - name: Commit reviewed generated pages
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add summaries/*.html index.html library.html books-*.html sitemap.xml
+          git add summaries/*.html js/*free*.js free-books.html data/seo-books.json
           if ! git diff --cached --quiet; then
-            git commit -m 'Add book-specific search landings and static directory'
+            git commit -m 'Fix verified official direct PDF download routes'
             git push
           fi
       - uses: actions/configure-pages@v5
