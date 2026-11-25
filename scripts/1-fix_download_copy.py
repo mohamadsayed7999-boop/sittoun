@@ -34,7 +34,7 @@ for p in list((R/'js').glob('*free*.js'))+[R/'free-books.html']:
    pat='(<a\\b[^>]*href='+re.escape(q+url+q)+'[^>]*>)(.*?)(</a>)'
    t=re.sub(pat,lambda m:m[1]+label+m[3],t,flags=re.S)
  p.write_text(t)
-(R/'data/seo-books.json').write_text(json.dumps(reg,ensure_ascii=False,indent=2)+'\n')
+(R/'data/seo-books.json').write_text(json.dumps([b for b in reg if b['url'] not in {x['url'] for q in (R/'data').glob('seo-books-[0-9]*.json') for x in json.loads(q.read_text())}],ensure_ascii=False,indent=2)+'\n')
 # Clarify only official Hindawi file actions, retaining source links in citations.
 import re
 for p in (R/'summaries').glob('*.html'):
