@@ -19,7 +19,7 @@ def attr(tag,name,value):
  if re.search(pattern,tag,re.S):return re.sub(pattern,' '+name+'="'+escape(value,quote=True)+'"',tag,count=1,flags=re.S)
  return tag[:-1]+' '+name+'="'+escape(value,quote=True)+'">'
 def main():
- data=json.loads((ROOT/'data/books.json').read_text());books=data['books'];ids=set();paths=set()
+ data=json.loads((ROOT/'data/books.json').read_text());books=data['books'];books+=sum([json.loads((ROOT/'data'/n).read_text())['books']for n in data.get('additional_files',[])],[]);ids=set();paths=set()
  assert data['scope']=='paid_books_only'
  for b in books:
   for k in ['id','title','author','category','description','cover_image','monetization_type','source_name','destination_url','page_path']:assert b.get(k),(b['id'],k)
