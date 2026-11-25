@@ -19,7 +19,7 @@ def meta(s,url,title=None,desc=None):
  tags='<link rel="canonical" href="'+url+'"><meta property="og:url" content="'+url+'">'
  return s.replace('</head>',tags+'</head>',1)
 def run():
- registry={b['url']:b for b in json.loads((R/'data/seo-books.json').read_text())}
+ registry={b['url']:b for b in (json.loads((R/'data/seo-books.json').read_text())+sum([json.loads(q.read_text())for q in sorted((R/'data').glob('seo-books-[0-9]*.json'))],[]))}
  books=[]
  for p in sorted((R/'summaries').glob('*.html')):
   s=p.read_text();rel=p.relative_to(R).as_posix()
@@ -913,7 +913,7 @@ def direct_pdf_repair():
   s=p.read_text()
   for old,new in replacements.items():s=s.replace(old,new)
   p.write_text(s)
- registry_path.write_text(json.dumps(registry,ensure_ascii=False,indent=2)+'\n')
+ registry_path.write_text(json.dumps([b for b in registry if b['url'] not in {x['url'] for q in (R/'data').glob('seo-books-[0-9]*.json') for x in json.loads(q.read_text())}],ensure_ascii=False,indent=2)+'\n')
  print('Repaired',len(DIRECT_PDFS),'verified official direct PDF routes')
 if __name__=='__main__':
  import sys
