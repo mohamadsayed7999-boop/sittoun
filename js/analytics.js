@@ -1,10 +1,12 @@
-/* GA4: edit measurementId here only. Empty means disabled, no Google requests. */
-window.SITTOUN_ANALYTICS = Object.freeze({ measurementId: 'G-9J3NGKNGWL', debug: false });
+/* Local no-measurement candidate: consent controls remain available. */
+window.SITTOUN_ANALYTICS = Object.freeze({ measurementId: 'G-9J3NGKNGWL', debug: false, enabled: false });
 (() => {
   'use strict';
   const cfg = window.SITTOUN_ANALYTICS || {};
   const id = cfg.measurementId;
-  if (!/^G-[A-Z0-9]{6,20}$/.test(id || '') || window.__sittounGA4 || !/^https?:$/.test(location.protocol)) return;
+  if (window.__sittounConsentUI || !/^https?:$/.test(location.protocol)) return;
+  window.__sittounConsentUI = true;
+  const measurementAllowed = cfg.enabled === true && /^G-[A-Z0-9]{6,20}$/.test(id || '');
   let active = false;
   const root = new URL('../', document.currentScript.src);
   const clean = raw => { try { const u = new URL(raw, location.href); return /^https?:$/.test(u.protocol) ? u.origin + u.pathname : ''; } catch { return ''; } };
@@ -22,6 +24,7 @@ window.SITTOUN_ANALYTICS = Object.freeze({ measurementId: 'G-9J3NGKNGWL', debug:
   const heading = document.createElement('strong'); heading.textContent = 'إحصائيات الزيارات، باختيارك';
   const description = document.createElement('p');
   description.textContent = 'نستخدم Google Analytics لفهم الزيارات والتفاعل. لا يُحمّل ولا يرسل بيانات إلى Google قبل موافقتك. قبولك يسمح بملفات ارتباط للتحليل فقط، وليس للإعلانات. الرفض لا يمنع أي ميزة بالموقع.';
+  if (!measurementAllowed) description.textContent = 'القياس معطل في هذه النسخة. لا يُحمّل Google Analytics ولا تُرسل بيانات قياس، حتى مع قبول محفوظ أو قبول جديد. يمكنك إدارة اختيارك أو رفضه وسحبه هنا؛ هذا لا يفعّل القياس.';
   const actions = document.createElement('div'); actions.className = 'analytics-consent-actions';
   const accept = document.createElement('button'); accept.type = 'button'; accept.textContent = 'قبول الإحصائيات';
   const reject = document.createElement('button'); reject.type = 'button'; reject.textContent = 'رفض الإحصائيات';
@@ -63,7 +66,7 @@ window.SITTOUN_ANALYTICS = Object.freeze({ measurementId: 'G-9J3NGKNGWL', debug:
     }
   });
   function start() {
-    if (window.__sittounGA4) return;
+    if (!measurementAllowed || window.__sittounGA4) return;
     active = true; window.__sittounGA4 = true; window['ga-disable-' + id] = false;
     window.dataLayer = window.dataLayer || [];
     const tag = function () { window.dataLayer.push(arguments); };

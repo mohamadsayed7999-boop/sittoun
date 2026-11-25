@@ -2,9 +2,10 @@
 (function () {
   'use strict';
 
+  const shareURL = new URLSearchParams(location.search).has('id') ? (document.querySelector('link[rel=canonical]')?.href || location.href) : location.href;
   // أزرار واتساب: النص من data-wa + رابط الصفحة الحالية
   document.querySelectorAll('[data-wa]').forEach(function (a) {
-    a.href = 'https://wa.me/?text=' + encodeURIComponent(a.dataset.wa + ' ' + location.href);
+    a.href = 'https://wa.me/?text=' + encodeURIComponent(a.dataset.wa + ' ' + shareURL);
   });
 
   document.addEventListener('click', async function (e) {
@@ -12,7 +13,7 @@
     var copy = e.target.closest('[data-copy]');
     if (copy) {
       try {
-        await navigator.clipboard.writeText(copy.dataset.copy || location.href);
+        await navigator.clipboard.writeText(copy.dataset.copy || shareURL);
         copy.textContent = 'تم النسخ ✓';
       } catch (err) {
         copy.textContent = 'انسخ الرابط يدوياً';
@@ -40,7 +41,7 @@
 // Egyptian paper-edition routes checked on 2026-11-24. Stock can change.
 (()=>{
 const routes={"dialogue-atheist": {"url": "https://www.shoroukbookstores.com/books/view.aspx?id=c391bf8f-577e-4b17-9d8f-d5a6505515d0", "edition": "طبعة ديوان للنشر، 2024."}, "games-people": {"url": "https://www.shoroukbookstores.com/books/view.aspx?id=d490f291-24db-4ddf-a31f-1f0aa27ece70", "edition": "طبعة آفاق، ترجمة جورج نبيل."}, "renew-life": {"url": "https://www.shoroukbookstores.com/books/view.aspx?id=211248ea-bb4e-4f86-bcdb-32284c87f81e", "inquiry": true}, "butterfly-effect": {"url": "https://www.shoroukbookstores.com/books/view.aspx?id=520f7810-ab88-4380-9ce6-00848d82e5b7", "edition": "طبعة الأهلية، 2015، 280 صفحة."}, "filled-empty": {"url": "https://www.shoroukbookstores.com/books/view.aspx?id=70572049-9547-4667-a9bf-385d37cd7dd6"}, "flamenco": {"url": "https://www.shoroukbookstores.com/books/view.aspx?id=9cfd51eb-7efe-43ac-955e-95b41bd20c8e"}, "father-hate": {"url": "https://www.shoroukbookstores.com/books/view.aspx?id=9befa2fb-0fd9-4881-bb5a-c9fefb0ecce6"}, "dangerous-relations": {"url": "https://www.shoroukbookstores.com/books/view.aspx?id=4dce552f-d498-4345-929b-09be1a19c6d7"}};
-const slug=location.pathname.split('/').pop().replace(/\.html$/,'');
+const slug=new URLSearchParams(location.search).get('id')||location.pathname.split('/').pop().replace(/\.html$/,'');
 const route=routes[slug];
 const source=document.querySelector('.book-source');
 if(!route||!source)return;
