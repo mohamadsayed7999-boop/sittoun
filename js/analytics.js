@@ -58,7 +58,7 @@ window.SITTOUN_ANALYTICS = Object.freeze({ measurementId: 'G-9J3NGKNGWL', debug:
   panel.hidden = choice !== null; settings.hidden = choice === null;
   const settingsHost = document.getElementById('analytics-privacy-control');
   if (settingsHost) { settingsHost.append(settings, panel); settings.hidden = !panel.hidden; }
-  else { panel.classList.add('is-floating'); settings.classList.add('is-floating'); document.body.append(settings, panel); }
+  // Consent controls are mounted only inside privacy.html; other pages get no consent UI.
   if (choice === 'granted') start();
   addEventListener('storage', event => {
     if (event.key === consentKey && window.__sittounGA4) {
