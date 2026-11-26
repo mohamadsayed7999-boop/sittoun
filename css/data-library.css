@@ -58,3 +58,22 @@ body.lib-page .top .bar{gap:4px}
 body.lib-page .top .logo{font-size:1.02rem}
 body.lib-page .top nav a{padding-inline:3px;font-size:.62rem}
 }
+
+/* library page: merged top notices, clear gap under the sticky nav */
+body.lib-page .lib-notices{background:var(--soft);border:1px solid var(--bd);border-inline-start:4px solid var(--ac);border-radius:10px;padding:14px 18px;margin:12px 0 18px;font-size:.9rem;line-height:1.8;overflow-wrap:anywhere}
+body.lib-page .lib-note{margin:.2em 0}
+body.lib-page .lib-points{margin:.4em 0;padding-inline-start:1.3em}
+body.lib-page .lib-points li{margin:.15em 0;padding-inline-start:4px}
+body.lib-page .lib-points li::marker{color:var(--ac);font-weight:700}
+body.lib-page .lib-details{margin-top:.55em;border-top:1px solid var(--bd);padding-top:.35em}
+body.lib-page .lib-details summary{cursor:pointer;min-height:44px;font-weight:700;display:flex;align-items:center}
+body.lib-page .lib-details p{font-size:.85rem;color:var(--mut);margin:.4em 0;line-height:1.9}
+@media(max-width:640px){
+body.lib-page main.wrap{padding-top:24px}
+body.lib-page .lib-notices{padding:12px 14px;font-size:.8rem;line-height:1.65;margin:10px 0 14px}
+body.lib-page .lib-details summary{min-height:40px}
+body.lib-page .lib-details p{font-size:.76rem;line-height:1.7}
+}
+@media(max-width:340px){
+body.lib-page .lib-notices{padding:10px 12px;font-size:.74rem}
+}
