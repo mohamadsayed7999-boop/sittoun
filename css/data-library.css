@@ -23,4 +23,16 @@ body[data-book-router] main.wrap{min-width:0;width:100%}body[data-book-router] .
 #data-grid .card .two-line-summary{line-height:1.6;max-height:3.2em}
 .unified-card .btn{margin:0 .8rem .8rem}
 .data-pages{margin:1.2rem 0;gap:.6rem}
+/* package-2: reduce vertical waste above filters, navbar, and card heights on mobile */
+.top .bar{min-height:58px}
+.top nav a{min-height:40px;padding:4px 6px}
+.prose.wide h1{font-size:1.55rem;letter-spacing:-.5px;margin:.25em 0 .15em}
+.prose .eyebrow{margin-bottom:.15rem}
+.prose p.callout{margin:.45rem 0;padding:.55rem .8rem;font-size:.84rem;line-height:1.7}
+.prose p.lead{margin:.4rem 0;font-size:.9rem;line-height:1.7}
+.catalog-counts{margin:.5rem 0;gap:.45rem}
+.catalog-count{padding:.45rem .65rem}
+.catalog-count dd{font-size:1.3rem;margin:0}
+.catalog-count dt{font-size:.72rem}
+#data-grid .card,#data-grid .free-card{padding:14px}
 }
