@@ -36,3 +36,25 @@ body[data-book-router] main.wrap{min-width:0;width:100%}body[data-book-router] .
 .catalog-count dt{font-size:.72rem}
 #data-grid .card,#data-grid .free-card{padding:14px}
 }
+
+/* library page, mobile only: clear gap under sticky nav, compact notices */
+@media(max-width:640px){
+body.lib-page main.wrap{padding-top:14px}
+body.lib-page .top .bar{gap:6px}
+body.lib-page .top .logo{font-size:1.15rem}
+body.lib-page .top nav{gap:0;padding-inline:2px;scroll-snap-type:none}
+body.lib-page .top nav a{min-width:0;padding-inline:5px;font-size:.68rem}
+body.lib-page .prose.wide{margin-top:0;padding-top:0}
+body.lib-page .prose.wide h1{font-size:1.35rem;margin:.1em 0 .25em}
+body.lib-page .prose p.callout{margin:.35rem 0;padding:.4rem .65rem;font-size:.76rem;line-height:1.5;overflow-wrap:anywhere}
+body.lib-page .prose p.lead{margin:.3rem 0;padding-bottom:6px;font-size:.78rem;line-height:1.55;font-weight:600;border-bottom:0}
+body.lib-page .catalog-counts{margin:.35rem 0;gap:.35rem}
+body.lib-page .catalog-count{padding:.3rem .35rem;border-radius:10px}
+body.lib-page .catalog-count dd{font-size:1.1rem;line-height:1.3}
+body.lib-page .catalog-count dt{font-size:.66rem;line-height:1.35}
+}
+@media(max-width:340px){
+body.lib-page .top .bar{gap:4px}
+body.lib-page .top .logo{font-size:1.02rem}
+body.lib-page .top nav a{padding-inline:3px;font-size:.62rem}
+}
