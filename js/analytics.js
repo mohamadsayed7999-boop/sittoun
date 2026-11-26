@@ -1,5 +1,5 @@
-/* Local no-measurement candidate: consent controls remain available. */
-window.SITTOUN_ANALYTICS = Object.freeze({ measurementId: 'G-9J3NGKNGWL', debug: false, enabled: false });
+/* Measurement enabled with consent-first loading: no tag or beacon before an explicit accept. */
+window.SITTOUN_ANALYTICS = Object.freeze({ measurementId: 'G-9J3NGKNGWL', debug: false, enabled: true });
 (() => {
   'use strict';
   const cfg = window.SITTOUN_ANALYTICS || {};
@@ -58,6 +58,7 @@ window.SITTOUN_ANALYTICS = Object.freeze({ measurementId: 'G-9J3NGKNGWL', debug:
   panel.hidden = choice !== null; settings.hidden = choice === null;
   const settingsHost = document.getElementById('analytics-privacy-control');
   if (settingsHost) { settingsHost.append(settings, panel); settings.hidden = !panel.hidden; }
+  else { panel.classList.add('is-floating'); settings.classList.add('is-floating'); document.body.append(settings, panel); }
   if (choice === 'granted') start();
   addEventListener('storage', event => {
     if (event.key === consentKey && window.__sittounGA4) {
