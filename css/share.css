@@ -12,6 +12,7 @@
 .share-item .meta{margin:0 0 16px;line-height:1.95;font-size:.95rem;color:#4B5563}
 .share-item .meta:last-child{margin-bottom:0}
 .share-caption{background:#FFFFFF;border:1px solid #C59B27;border-radius:12px;padding:16px;margin:0 0 16px;font-size:.95rem;line-height:1.95;color:#18181B;overflow-wrap:anywhere}
+.share-url{display:inline-block;direction:ltr;unicode-bidi:embed;word-break:break-all;overflow-wrap:anywhere;color:#14533D;font-weight:600;margin-top:6px}
 .share-act{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 16px}
 .share-act .btn{flex:1 1 180px;text-align:center;margin:0}
 .share-note{background:#FFFFFF;border:1px solid var(--bd);border-radius:16px;padding:24px;margin:24px 0}
