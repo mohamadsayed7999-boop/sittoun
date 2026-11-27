@@ -1,0 +1,15 @@
+:root{--share-gap:24px}
+.share-h1{font-size:1.8rem;margin:32px 0 16px}
+.share-list{display:grid;gap:var(--share-gap);margin:24px 0 32px}
+.share-item{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:24px;box-shadow:var(--shadow)}
+.share-verse{font-size:1.18rem;line-height:2.2;font-weight:600;margin:0 0 16px;letter-spacing:0}
+.share-poem{margin:0 0 8px;font-weight:650;color:var(--ac)}
+.share-item .meta{margin:0 0 16px;line-height:1.9}
+.share-item .meta:last-child{margin-bottom:0}
+.share-act{margin:0 0 16px}
+.share-act .btn{display:inline-block}
+.share-note{background:var(--soft);border:1px solid var(--bd);border-radius:16px;padding:24px;margin:24px 0}
+.share-note h2{margin:0 0 12px;font-size:1.15rem}
+.share-note p{margin:0 0 16px;line-height:2}
+.share-note p:last-child{margin-bottom:0}
+@media(max-width:760px){.share-h1{font-size:1.5rem;margin:24px 0 12px}.share-item{padding:20px}.share-verse{font-size:1.05rem;line-height:2.1}}
